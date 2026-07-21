@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vennela Mandem — Food Process Engineering Research</title>
+<meta name="description" content="Research portfolio of Vennela Mandem, Food Process Engineering graduate specialising in non-thermal processing and analytical food chemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-alt:#E3E5DA;
+    --card:#F6F7F2;
+    --ink:#191C1A;
+    --muted:#5C635C;
+    --line:#CBD0C3;
+    --amber:#A96426;
+    --amber-deep:#7C4A1B;
+    --teal:#1E4A47;
+    --teal-deep:#123230;
+    --max:920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal-deep);}
+  a:focus-visible, button:focus-visible, .navlink:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  nav.site{
+    position:sticky; top:0; z-index:20;
+    background:rgba(237,238,231,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.site .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--teal-deep); text-decoration:none; font-weight:500;
+  }
+  .navlinks{display:flex; gap:24px; list-style:none; margin:0; padding:0;}
+  .navlinks a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px; letter-spacing:0.04em; text-transform:uppercase;
+    text-decoration:none; color:var(--muted);
+    padding-bottom:2px; border-bottom:1px solid transparent;
+  }
+  .navlinks a:hover{color:var(--ink); border-bottom-color:var(--amber);}
+  .navtoggle{display:none;}
+
+  /* SIGNATURE TRACE DIVIDER */
+  .trace{width:100%; height:56px; display:block; overflow:visible;}
+  .trace path{
+    fill:none; stroke:var(--amber); stroke-width:1.6;
+    stroke-dasharray:900; stroke-dashoffset:900;
+    animation:draw 2.2s ease forwards;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .trace path{animation:none; stroke-dashoffset:0;}
+    html{scroll-behavior:auto;}
+  }
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+
+  /* HERO */
+  header.hero{
+    position:relative;
+    padding:96px 0 40px;
+    overflow:hidden;
+  }
+  header.hero .wrap{position:relative; z-index:2;}
+  .hero-bg{
+    position:absolute; inset:0; z-index:1; opacity:0.5;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--teal-deep); margin:0 0 18px;
+  }
+  h1.name{
+    font-family:'Source Serif 4',serif;
+    font-weight:600;
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .role{
+    font-size:19px; color:var(--muted); max-width:560px; margin:0 0 30px;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace; font-size:12px;
+    background:var(--paper-alt); border:1px solid var(--line);
+    color:var(--teal-deep); padding:6px 12px; border-radius:3px;
+  }
+
+  section{padding:56px 0;}
+  h2.section-title{
+    font-family:'Source Serif 4',serif; font-weight:600;
+    font-size:28px; margin:0 0 6px; color:var(--ink);
+  }
+  .section-sub{
+    font-family:'IBM Plex Mono',monospace; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--amber-deep); margin:0 0 28px;
+  }
+
+  /* PROFILE */
+  .profile-text{font-size:17px; max-width:680px; color:var(--ink);}
+
+  /* RESEARCH CARDS */
+  .research-card{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:6px; padding:26px 28px; margin-bottom:22px;
+  }
+  .research-card h3{
+    font-family:'Source Serif 4',serif; font-weight:600;
+    font-size:21px; margin:0 0 4px; color:var(--ink);
+  }
+  .research-meta{
+    font-family:'IBM Plex Mono',monospace; font-size:12px;
+    color:var(--muted); margin:0 0 14px;
+  }
+  .research-card p.desc{margin:0 0 16px; font-size:15px; color:var(--ink);}
+  .readout{
+    display:flex; flex-wrap:wrap; gap:8px 20px;
+    border-top:1px dashed var(--line); padding-top:14px;
+  }
+  .readout .pt{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--teal-deep);}
+  .readout .pt b{color:var(--amber-deep); font-weight:500;}
+
+  /* PUBLICATIONS */
+  ul.pubs{list-style:none; margin:0; padding:0;}
+  ul.pubs li{
+    padding:14px 0; border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  ul.pubs li:first-child{border-top:1px solid var(--line);}
+  .pub-tag{
+    display:inline-block; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; text-transform:uppercase; letter-spacing:0.04em;
+    background:var(--paper-alt); color:var(--teal-deep);
+    padding:2px 8px; border-radius:3px; margin-right:10px;
+  }
+
+  /* EXPERIENCE */
+  .exp-row{
+    padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .exp-row:first-child{border-top:1px solid var(--line);}
+  .exp-head{
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+    gap:6px 16px; margin-bottom:6px;
+  }
+  .exp-role{
+    font-family:'Source Serif 4',serif; font-weight:600; font-size:17px; color:var(--ink);
+  }
+  .exp-role .org{
+    font-family:'IBM Plex Sans',sans-serif; font-weight:400; font-style:italic; color:var(--muted);
+  }
+  .exp-dates{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); white-space:nowrap;
+  }
+  .exp-desc{font-size:14.5px; color:var(--ink); margin:0;}
+
+  /* CERTIFICATIONS */
+  .cert-row{
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+    gap:6px 16px; padding:14px 0; border-bottom:1px solid var(--line);
+  }
+  .cert-row:first-child{border-top:1px solid var(--line);}
+  .cert-name{font-weight:600; font-size:15px; color:var(--ink);}
+  .cert-issuer{font-size:13px; color:var(--muted); margin-left:6px;}
+  .cert-meta{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal-deep);
+  }
+  .cert-meta a{color:var(--amber-deep); text-decoration:none; border-bottom:1px dotted var(--amber-deep);}
+  .cert-meta a:hover{color:var(--amber);}
+
+  /* SKILLS */
+  .skill-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px 40px;}
+  .skill-group h4{
+    font-family:'IBM Plex Mono',monospace; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--amber-deep);
+    margin:0 0 10px;
+  }
+  .skill-group .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-group .tags span{
+    font-size:13px; background:var(--paper-alt); border:1px solid var(--line);
+    padding:5px 10px; border-radius:3px; color:var(--ink);
+  }
+
+  /* CONTACT */
+  footer.contact{
+    background:var(--teal-deep); color:#EAEFEA; padding:64px 0 40px;
+  }
+  footer.contact h2.section-title{color:#EAEFEA;}
+  footer.contact .section-sub{color:#C7D6CE;}
+  .contact-grid{
+    display:flex; flex-wrap:wrap; gap:28px 48px; margin-top:8px;
+  }
+  .contact-item .label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px;
+    text-transform:uppercase; letter-spacing:0.06em; color:#9FBAAE;
+    margin:0 0 4px;
+  }
+  .contact-item a, .contact-item span.val{
+    font-size:16px; color:#EAEFEA; text-decoration:none;
+  }
+  .contact-item a:hover{color:var(--amber);}
+  .foot-note{
+    margin-top:48px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8FA79B;
+  }
+
+  @media (max-width:640px){
+    .navlinks{gap:14px;}
+    .skill-grid{grid-template-columns:1fr;}
+    header.hero{padding:64px 0 24px;}
+    section{padding:40px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">V. MANDEM</a>
+    <ul class="navlinks">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero-bg" viewBox="0 0 920 320" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,220 C80,220 90,240 130,238 C170,236 175,60 210,58 C245,56 250,230 300,228 C350,226 355,200 400,198 C450,196 455,250 520,248 C590,246 595,120 660,118 C720,116 725,232 800,230 C850,228 870,180 920,178"
+      fill="none" stroke="#1E4A47" stroke-width="1.2" opacity="0.35"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Food Process Engineering — Research Portfolio</p>
+    <h1 class="name">Vennela Mandem</h1>
+    <p class="role">MSc Food Process Engineering candidate researching non-thermal processing, flavour chemistry, and sustainable food manufacturing. Currently applying DOSY NMR spectroscopy to whisky and spirit flavour systems at Heriot-Watt University.</p>
+    <div class="chips">
+      <span class="chip">CGPA 9.43 / 10.0</span>
+      <span class="chip">DOSY NMR</span>
+      <span class="chip">Non-thermal processing</span>
+      <span class="chip">HACCP · FSSC 22000</span>
+    </div>
+  </div>
+</header>
+
+<svg class="trace" viewBox="0 0 920 56" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,28 C40,28 45,8 70,8 C95,8 100,48 130,48 C160,48 165,20 200,20 C240,20 245,34 280,34 C330,34 335,10 380,10 C440,10 445,44 500,44 C560,44 565,26 620,26 C680,26 685,16 740,16 C800,16 805,36 860,36 C890,36 895,28 920,28"/>
+</svg>
+
+<section id="profile">
+  <div class="wrap">
+    <h2 class="section-title">Profile</h2>
+    <p class="section-sub">Background</p>
+    <p class="profile-text">I'm a Food Process Engineering graduate with a research focus that bridges analytical chemistry and food manufacturing. My dissertation applies Diffusion Ordered Spectroscopy (DOSY) NMR to investigate how fatty-acid micelles trap and release flavour compounds in whisky and spirits — the first systematic study of its kind. Alongside this, I've worked on non-thermal preservation (UV-C treatment of milk at CFTRI, Mysuru), food safety and quality systems, and applied product development from waste-stream valorisation to adulteration detection. I'm looking for research assistant, KTP, or PhD opportunities in non-thermal processing, food biotechnology, fermentation and microbiology, or sustainable food manufacturing.</p>
+  </div>
+</section>
+
+<svg class="trace" viewBox="0 0 920 56" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,40 C50,40 55,14 90,14 C130,14 135,44 170,44 C210,44 215,6 260,6 C310,6 315,38 360,38 C410,38 415,22 460,22 C510,22 515,42 560,42 C610,42 615,12 660,12 C710,12 715,32 760,32 C810,32 815,18 860,18 C890,18 895,26 920,26"/>
+</svg>
+
+<section id="research">
+  <div class="wrap">
+    <h2 class="section-title">Research</h2>
+    <p class="section-sub">Projects & findings</p>
+
+    <div class="research-card">
+      <h3>Investigation of flavour-releasing components in whisky and spirits using DOSY NMR</h3>
+      <p class="research-meta">MSc Dissertation · Heriot-Watt University · Supervisors: Dr David Ellis, Prof. Clare McCabe · 2026</p>
+      <p class="desc">Testing the micellar-trapping hypothesis for volatile flavour compounds — such as guaiacol, the phenol behind peaty, smoky aroma — in fatty-acid/ethanol/water spirit matrices. Preparing binary and ternary model solutions across ethanol concentrations and temperatures, and optimising BPPSTE-LED pulse sequences to suppress convection artefacts in low-viscosity solvents.</p>
+      <div class="readout">
+        <span class="pt">METHOD <b>DOSY NMR (BPPSTE-LED)</b></span>
+        <span class="pt">TEMPS <b>10 / 25 / 40 °C</b></span>
+        <span class="pt">FATTY ACIDS <b>C8:0, C10:0, C12:0</b></span>
+        <span class="pt">ANALYSIS <b>TOPSpin · DOSY Toolbox · Bland–Altman</b></span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <h3>Non-thermal processing of raw milk for spray drying and its quality evaluation</h3>
+      <p class="research-meta">Research Intern · CFTRI, Mysuru, India · Dec 2024 – Mar 2025</p>
+      <p class="desc">Applied UV-C pre-treatment to raw cow milk ahead of spray drying, then benchmarked the treated powder against a conventional control across yield, physicochemical, structural, and microbiological parameters.</p>
+      <div class="readout">
+        <span class="pt">FINE POWDER YIELD <b>42% → 30%</b></span>
+        <span class="pt">WATER ACTIVITY <b>0.19 → 0.20</b></span>
+        <span class="pt">PROTEIN <b>29.08% → 28.42%</b></span>
+        <span class="pt">FTIR BANDS <b>~1647, ~1541 cm⁻¹</b></span>
+        <span class="pt">MICROBIAL GROWTH <b>none detected</b></span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <h3>Value-added cookies from underutilised oil cake</h3>
+      <p class="research-meta">Community-Based Research Project · B.Tech, Food Technology</p>
+      <p class="desc">Formulated cookies from de-fatted peanut and sesame oil-cake flours at four total substitution levels (0/25/50/75%), to valorise a waste stream from oil-expelling industries. Evaluated physical, textural, colour, proximate, microbiological, and sensory quality against a control, using a structured 30-panellist hedonic evaluation and a texture analyser for objective firmness measurement.</p>
+      <div class="readout">
+        <span class="pt">SELECTED FORMULATION <b>F3 — 50% total oilcake substitution, 75:25 peanut:sesame ratio</b></span>
+        <span class="pt">TEXTURE (peak load) <b>21.2 N control → 15.6 N (F3) → 12.4 N (F4)</b></span>
+        <span class="pt">COLOUR (L*, top) <b>94.6 control → 42.3 (F3) → 58.7 (F4)</b></span>
+        <span class="pt">PROTEIN <b>4.5% control → 12.97% (F3)</b></span>
+        <span class="pt">FAT <b>19.8% control → 22.72% (F3)</b></span>
+        <span class="pt">ENERGY <b>486 kcal (F3)</b></span>
+        <span class="pt">PANEL <b>30 semi-trained panellists, 9-point hedonic scale</b></span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <h3>Detection of paneer adulteration</h3>
+      <p class="research-meta">Problem-Based Learning Project · B.Tech, Food Technology</p>
+      <p class="desc">Developed and applied a rapid detection kit using Hehner's test to identify formalin — a genotoxic, carcinogenic preservative — in commercial paneer samples.</p>
+      <div class="readout">
+        <span class="pt">TEST <b>Hehner's test</b></span>
+        <span class="pt">RESULT <b>positive detections confirmed by purple colour change</b></span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <h3>Extraction of starch from bread</h3>
+      <p class="research-meta">Unit Operations Project · B.Tech, Food Technology</p>
+      <p class="desc">Extracted starch from stale, retrograded bread and from raw wheat flour, then compared the functional properties of the two sources to evaluate food-waste valorisation potential.</p>
+    </div>
+
+    <div class="research-card">
+      <h3>Home automation system using sensors</h3>
+      <p class="research-meta">IoT Sensors and Devices Module · Team Project (5) · B.Tech, 2022–23</p>
+      <p class="desc">Built an IoT-based energy-efficient fan and light controller. A temperature sensor (LM35) automatically scaled fan speed via PWM as motor heat increased, reducing energy waste; an LDR sensor drove ambient-light-based automatic lighting; and dual IR sensors detected room occupancy to switch the fan and light on or off as people entered or left, with a Bluetooth app for manual override.</p>
+      <div class="readout">
+        <span class="pt">COMPONENTS <b>Arduino Uno, LM35, LDR, dual IR sensors, HC-05 Bluetooth</b></span>
+        <span class="pt">CONTROL LOGIC <b>PWM-scaled fan speed, occupancy-based auto-switching</b></span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <h3>Solar-based drip irrigation system</h3>
+      <p class="research-meta">Clean Energy Design Project · Team Project (5)</p>
+      <p class="desc">Designed a solar-powered, automated drip irrigation system for rooftop and home gardening. A solar panel and rechargeable battery supplied power, a soil moisture sensor triggered an Arduino-controlled solenoid valve, and drip-line piping delivered water only when moisture fell below a set threshold — reducing both electricity and water waste versus manual watering.</p>
+      <div class="readout">
+        <span class="pt">POWER <b>Solar panel + rechargeable battery</b></span>
+        <span class="pt">CONTROL <b>Arduino-driven solenoid valve, moisture-threshold triggered</b></span>
+        <span class="pt">DELIVERY <b>Drip line, sub-metre spaced outlets</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="trace" viewBox="0 0 920 56" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,26 C45,26 50,44 85,44 C125,44 130,10 175,10 C220,10 225,40 270,40 C320,40 325,18 370,18 C420,18 425,36 470,36 C520,36 525,14 570,14 C620,14 625,42 670,42 C720,42 725,20 770,20 C815,20 820,32 865,32 C892,32 897,24 920,24"/>
+</svg>
+
+<section id="publications">
+  <div class="wrap">
+    <h2 class="section-title">Publications & presentations</h2>
+    <p class="section-sub">Written & spoken record</p>
+    <ul class="pubs">
+      <li><span class="pub-tag">Book chapter</span>Thivya, P., Bhanu Prakash Reddy, N., Rajam, R., Samiksha Reddy, P., &amp; <strong>Vennela, M.</strong> (2025). "Biotechnological Innovations in Packaging and Sensors in Food Processing." In <em>Biotechnological Innovations in Food Processing: Transforming the Future of Nutrition and Sustainability</em> (pp. 503&ndash;546). Springer, Cham. <a href="https://doi.org/10.1007/978-3-031-96526-5_12" target="_blank" rel="noopener">doi.org/10.1007/978-3-031-96526-5_12</a></li>
+      <li><span class="pub-tag">Magazine</span>Article published in Food &amp; Drink Industry Magazine.</li>
+      <li><span class="pub-tag">Conference</span>IFCON — International Food Convention, AFSTI, Dec 2023.</li>
+      <li><span class="pub-tag">Conference</span>National Symposium on Millets for the Health and Wealth of the Nation, Oct 2023.</li>
+      <li><span class="pub-tag">Conference</span>National Conference on Millets, Sep 2023.</li>
+      <li><span class="pub-tag">Conference</span>Sustainable Development in Food Processing and Technology for Food Safety, Nov 2022.</li>
+      <li><span class="pub-tag">Award</span>1st place, poster presentation, undergraduate research conference.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="section-title">Professional Experience</h2>
+    <p class="section-sub">Industry & production</p>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <span class="exp-role">Production/Quality Intern <span class="org">— RPA Unibakes Pvt Ltd, manufacturer of the Unibic biscuit brand</span></span>
+        <span class="exp-dates">May 2024 – Jul 2024 · India</span>
+      </div>
+      <p class="exp-desc">Worked within a major biscuit production environment: inspected incoming raw materials against quality standards, ran shelf-life studies to set storage and expiry parameters, and trained production staff on quality control practice.</p>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <span class="exp-role">Quality Intern <span class="org">— Heritage Foods Ltd</span></span>
+        <span class="exp-dates">May 2023 – Jul 2023 · India</span>
+      </div>
+      <p class="exp-desc">Analysed microbial loads in milk and dairy products; monitored process flow, plant hygiene, and production staff hygiene compliance.</p>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <span class="exp-role">Hospitality Crew Member <span class="org">— McDonald's</span></span>
+        <span class="exp-dates">Nov 2025 – Present · Edinburgh</span>
+      </div>
+      <p class="exp-desc">Maintain HACCP procedures, food hygiene, and allergen protocols in a fast-paced UK food service environment while completing MSc studies.</p>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <span class="exp-role">Social Media Manager <span class="org">— The Vintage Earth Studio</span></span>
+        <span class="exp-dates">Aug 2020 – Feb 2023 · India</span>
+      </div>
+      <p class="exp-desc">Managed social media content and scheduling across digital platforms to enhance brand visibility. Created engaging marketing content and supported promotional campaigns. Monitored audience engagement and collaborated with the team to improve online presence.</p>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <span class="exp-role">Executive Assistant Intern <span class="org">— Robokalam</span></span>
+        <span class="exp-dates">Jun 2020 – Jul 2021 · India</span>
+      </div>
+      <p class="exp-desc">Supported daily administrative operations and coordinated meetings and documentation. Assisted in organising work schedules, interviews, and maintaining project records. Developed strong organisational, communication, and multitasking skills in a professional environment.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-sub">Verifiable credentials</p>
+
+    <div class="cert-row">
+      <span><span class="cert-name">HACCP — Level 3</span><span class="cert-issuer">SGS India</span></span>
+      <span class="cert-meta">No. 166519446/182296644 · <a href="https://learning.sgs.com/certificateverify/" target="_blank" rel="noopener">verify at SGS Academy</a></span>
+    </div>
+    <div class="cert-row">
+      <span><span class="cert-name">FSSC 22000 — Internal Auditor</span><span class="cert-issuer">SGS India</span></span>
+      <span class="cert-meta">No. 166328067/182237681 · <a href="https://learning.sgs.com/certificateverify/" target="_blank" rel="noopener">verify at SGS Academy</a></span>
+    </div>
+    <div class="cert-row">
+      <span><span class="cert-name">Dairy Production and Management</span><span class="cert-issuer">Coursera</span></span>
+      <span class="cert-meta"><a href="https://coursera.org/verify/SR7HP9976JE6" target="_blank" rel="noopener">verify at coursera.org/verify/SR7HP9976JE6</a></span>
+    </div>
+    <div class="cert-row">
+      <span><span class="cert-name">Food Safety & Standards</span><span class="cert-issuer">Labelling and Display</span></span>
+      <span class="cert-meta">&nbsp;</span>
+    </div>
+    <div class="cert-row">
+      <span><span class="cert-name">Nutrition and Wellbeing</span></span>
+      <span class="cert-meta">&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Technical & analytical</p>
+    <div class="skill-grid">
+      <div class="skill-group">
+        <h4>Analytical techniques</h4>
+        <div class="tags">
+          <span>DOSY / 1H NMR</span><span>FTIR</span><span>Electronic nose</span><span>Particle sizing</span><span>Water activity</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Processing</h4>
+        <div class="tags">
+          <span>UV-C treatment</span><span>Spray drying</span><span>Process optimisation</span><span>Preservation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Quality & safety</h4>
+        <div class="tags">
+          <span>HACCP</span><span>FSSC 22000</span><span>GMP</span><span>Food microbiology</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Software</h4>
+        <div class="tags">
+          <span>TOPSpin</span><span>DOSY Toolbox</span><span>R</span><span>Python</span><span>SPSS</span><span>MATLAB</span><span>Autodesk Fusion 360</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Sensory & consumer methods</h4>
+        <div class="tags">
+          <span>Structured sensory panels</span><span>Hedonic scoring</span><span>Stakeholder consultation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Research methods</h4>
+        <div class="tags">
+          <span>Literature review (CRAAP)</span><span>Experimental design</span><span>Statistical analysis (ANOVA, Tukey)</span><span>Bland–Altman comparison</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Professional skills</h4>
+        <div class="tags">
+          <span>Teamwork</span><span>Communication</span><span>Analytical thinking</span><span>Problem solving</span><span>Adaptability</span><span>Time management</span><span>Leadership</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="tags">
+          <span>Telugu (native)</span><span>English (fluent)</span><span>Hindi (fluent)</span><span>Tamil (conversational)</span><span>Kannada (conversational)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Get in touch</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <p class="label">Email</p>
+        <a href="mailto:v.mandem@outlook.com">v.mandem@outlook.com</a>
+      </div>
+      <div class="contact-item">
+        <p class="label">Phone</p>
+        <span class="val">+44 7818 487323</span>
+      </div>
+      <div class="contact-item">
+        <p class="label">Location</p>
+        <span class="val">Edinburgh, Scotland, UK</span>
+      </div>
+      <div class="contact-item">
+        <p class="label">LinkedIn</p>
+        <a href="https://www.linkedin.com/in/vennela-mandem/" target="_blank" rel="noopener">linkedin.com/in/vennela-mandem</a>
+      </div>
+    </div>
+    <p class="foot-note">Portfolio last updated 2026. Built to accompany academic and research applications.</p>
+  </div>
+</footer>
+
+</body>
+</html>
